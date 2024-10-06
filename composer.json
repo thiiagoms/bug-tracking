@@ -1,0 +1,22 @@
+{
+    "name": "thiiagoms/bugtracking",
+    "autoload": {
+        "psr-4": {
+            "Thiiagoms\\Bugtracking\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "thiiagoms",
+            "email": "thiagom.devsec@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^11"
+    }
+}
