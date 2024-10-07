@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Thiiagoms\Bugtracking\Helpers;
 
-use RuntimeException;
+use Thiiagoms\Bugtracking\Exceptions\NotFoundException;
 use Throwable;
 
 class Config
@@ -20,7 +20,7 @@ class Config
         return isset($fileContent[$key]) ? $fileContent[$key] : [];
     }
 
-    private static function getFileContent(string $fileName): array
+    public static function getFileContent(string $fileName): array
     {
         $fileContent = [];
 
@@ -31,7 +31,7 @@ class Config
                 $fileContent = require $path;
             }
         } catch (Throwable $exception) {
-            throw new RuntimeException(
+            throw new NotFoundException(
                 sprintf('The specified file: %s was not found', $fileName)
             );
         }
