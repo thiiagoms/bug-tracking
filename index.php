@@ -2,7 +2,10 @@
 
 declare(strict_types=1);
 
+use Thiiagoms\Bugtracking\Logger\Logger;
+
 require_once __DIR__ . '/bootstrap.php';
 
-$config = \Thiiagoms\Bugtracking\Helpers\Config::getFileContent('yeyeee');
-var_dump($config);
+$logger = new Logger();
+
+$logger->log('emergency', 'There is an emergency');
