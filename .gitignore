@@ -1,2 +1,2 @@
 /vendor/
-/storage/**
+/storage/logs/*.log
