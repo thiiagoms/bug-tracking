@@ -23,7 +23,7 @@ class LoggerTest extends TestCase
 
     public function testItImplementsTheLoggerInterface(): void
     {
-        $this->assertInstanceOf(LoggerContract::class, new Logger);
+        $this->assertInstanceOf(LoggerContract::class, new Logger());
     }
 
     public function testItCandCanCreateDifferentTypesOfLogLevel(): void
