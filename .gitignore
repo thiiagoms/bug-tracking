@@ -1,3 +1,4 @@
 /vendor/
 /storage/logs/*.log
-.phpunit.cache/**/*/
+.phpunit.result.cache
+.phpunit.cache
