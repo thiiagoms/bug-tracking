@@ -3,7 +3,7 @@
 return [
     'pdo' => [
         'driver' => 'mysql',
-        'host' => 'localhost',
+        'host' => '127.0.0.1',
         'db_name' => 'bug_app',
         'db_username' => 'root',
         'db_user_password' => '',

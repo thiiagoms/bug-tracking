@@ -20,7 +20,7 @@ abstract class AbstractConnection
         'default_fetch'
     ];
 
-    public function __construct(private readonly array $credentials)
+    public function __construct(protected array $credentials)
     {
         if (! $this->credentialsHaveRequiredKeys($this->credentials)) {
             throw new MissingArgumentsException('Database connection credentials are not mapped correctly');
@@ -33,4 +33,6 @@ abstract class AbstractConnection
 
         return count($matches) === count(static::REQUIRED_CONNECTION_KEYS);
     }
+
+    abstract protected function parseCredentials(array $credentials): array;
 }
