@@ -7,6 +7,7 @@ namespace Tests\Unit\Database;
 use PHPUnit\Framework\Attributes\Depends;
 use PHPUnit\Framework\TestCase;
 use Thiiagoms\Bugtracking\Contracts\Database\DatabaseConnectionContract;
+use Thiiagoms\Bugtracking\Database\MYSQLIConnection;
 use Thiiagoms\Bugtracking\Database\PDOConnection;
 use Thiiagoms\Bugtracking\Exceptions\MissingArgumentsException;
 use Thiiagoms\Bugtracking\Helpers\Config;
@@ -36,6 +37,23 @@ class DatabaseConnectionTest extends TestCase
     public function testItIsAValidPdoConnection(DatabaseConnectionContract $handler): void
     {
         $this->assertInstanceOf(\PDO::class, $handler->getConnection());
+    }
+
+    public function testItCanConnectToDatabaseWithMYSQLIApi(): MYSQLIConnection
+    {
+        $credentials = $this->getCredentials('mysqli');
+
+        $handler = (new MYSQLIConnection($credentials))->connect();
+
+        $this->assertInstanceOf(DatabaseConnectionContract::class, $handler);
+
+        return $handler;
+    }
+
+    #[Depends('testItCanConnectToDatabaseWithMYSQLIApi')]
+    public function testItIsAValidMYSQLIConnection(DatabaseConnectionContract $handler): void
+    {
+        $this->assertInstanceOf(\mysqli::class, $handler->getConnection());
     }
 
     private function getCredentials(string $type): array

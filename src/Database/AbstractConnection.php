@@ -9,7 +9,7 @@ use Thiiagoms\Bugtracking\Exceptions\MissingArgumentsException;
 
 abstract class AbstractConnection
 {
-    protected PDO $connection;
+    protected $connection;
 
     protected const REQUIRED_CONNECTION_KEYS = [
         'driver',

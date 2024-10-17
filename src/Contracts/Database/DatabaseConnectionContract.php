@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Thiiagoms\Bugtracking\Contracts\Database;
 
+use mysqli;
 use PDO;
-use Thiiagoms\Bugtracking\DAtabase\PDOConnection;
 
 interface DatabaseConnectionContract
 {
-    public function connect(): PDOConnection;
+    public function connect(): self;
 
-    public function getConnection(): PDO;
+    public function getConnection(): PDO|mysqli;
 
     public function close(): void;
 }
