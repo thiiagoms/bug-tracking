@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Thiiagoms\Bugtracking\Database;
+namespace Thiiagoms\Bugtracking\Database\PDO;
 
 use PDO;
 use PDOException;

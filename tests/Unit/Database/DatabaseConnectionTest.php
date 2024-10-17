@@ -7,8 +7,8 @@ namespace Tests\Unit\Database;
 use PHPUnit\Framework\Attributes\Depends;
 use PHPUnit\Framework\TestCase;
 use Thiiagoms\Bugtracking\Contracts\Database\DatabaseConnectionContract;
-use Thiiagoms\Bugtracking\Database\MYSQLIConnection;
-use Thiiagoms\Bugtracking\Database\PDOConnection;
+use Thiiagoms\Bugtracking\Database\MYSQLI\MYSQLIConnection;
+use Thiiagoms\Bugtracking\Database\PDO\PDOConnection;
 use Thiiagoms\Bugtracking\Exceptions\MissingArgumentsException;
 use Thiiagoms\Bugtracking\Helpers\Config;
 

@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Thiiagoms\Bugtracking\Database;
+namespace Thiiagoms\Bugtracking\Database\MYSQLI;
 
 use mysqli;
 use mysqli_driver;
 use Tests\Unit\Database\DatabaseConnectionTest;
 use Thiiagoms\Bugtracking\Contracts\Database\DatabaseConnectionContract;
+use Thiiagoms\Bugtracking\Database\AbstractConnection;
 
 class MYSQLIConnection extends AbstractConnection implements DatabaseConnectionContract
 {
